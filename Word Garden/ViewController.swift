@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var guessCountLabel: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var flowerImageView: UIImageView!
-    var wordToGuess = "Swift"
+    var wordToGuess = "SWIFT"
     var lettersGuessed = ""
     let maxNumberOfWrongGuesses = 8
     var wrongGuessesRemaining = 8
@@ -37,15 +37,18 @@ class ViewController: UIViewController {
     func formatUserGuessLabel() {
         var revealedWord = ""
         lettersGuessed += guessedLetterField.text!
-        
+        print(wordToGuess.count)
         for letter in wordToGuess{
-            if lettersGuessed.contains(letter){
-                revealedWord = revealedWord + "\(letter)"
-            } else{
+            print("hi")
+            if lettersGuessed.contains(letter) {
+                revealedWord = revealedWord + " \(letter)"
+            } else {
                 revealedWord += " _"
             }
         }
-        //revealedWord.removeFirst()
+        print(revealedWord)
+        revealedWord.removeFirst()
+        print(revealedWord)
         userGuessLabel.text = revealedWord
     }
     
